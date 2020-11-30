@@ -1,0 +1,23 @@
+一、在电脑上实现人脸识别系统：
+1. 环境配置：
+      本项目对环境配置版本要求严格,需对应版本下载安装相应工具
+      下载Vsuial Studio2015 
+      需要先查询自身电脑是否支持CUDA, 请上网站 ：https://developer.nvidia.com/cuda-gpus
+查查询。
+     电脑支持CUDA：
+           请下载本项目所需要的CUDA和对应的CUDNN版本：CUDA:9.0,CUDNN与CUDA对应，下载时需要注册按照网站步骤即可
+           下载对应的Python版本，本项目支持python3.6版本,之后按照文档下载相应版本的工具包即可
+     电脑不支持CUDA时，就不需要下载CUDA，但仍需要下载Vsuial Studio2015
+     安装Tensorflow(两种方式):
+            1.使用anaconda下载安装tensorflow,此时下载时创建虚拟环境时python版本要对应，python所需要的第三方库也要下载在虚拟环境中
+            2.直接在cmd中使用pip下载，下载时注意版本即可
+      上述环境配置完成之后使用pycharm(只要是python的编译器即可)选定python的版本，打开Emotion_Recongnition文件运行runMain.py文件，出现识别窗口并且打开摄像头即完成。
+       如果能打开识别窗口但是不能打开摄像头：
+	检查python第三方库h5py的版本。如果版本为3.x将其降版本为2.x即可
+
+2. 连接机器人：
+    连接机器人需要python2.7版本， 分别打开nao_Facial_expression_recognition 和 nao_Fer_server 文件在nao_Facial_expression_recognition 中设置好机器人ip地址和本机地址和端口，然后再nao_Fer_server文件中设置对应的地址和端口（别忘了在nao_Facial_expression_recognition中的facial_expression_recognition.py中安装pillow包）。nao_Fer_server 中的ip地址需要改的地方有很多处，不要漏掉不然会不成功。
+     完成之后要先运行Fer_server_2.py进行监听端口，再运行facial_expression_recognition.py机器人即可进行人脸识别。
+
+    
+            
